@@ -23,4 +23,5 @@ def morph_fluff (f : Fluff) : Fluff :=
   | puff b => puff (morph_blob b)
 
 theorem morph_fluff_idem : ∀ (f : Fluff),
-  morph_fluff (morph_fluff f) = morph_fluff f := sorry
+    morph_fluff (morph_fluff f) = morph_fluff f :=
+  sorry

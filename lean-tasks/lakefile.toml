@@ -8,3 +8,7 @@ name = "LeanTasks"
 [[lean_exe]]
 name = "lean-tasks"
 root = "Main"
+
+[[require]]
+name = "aesop"
+git = "https://github.com/leanprover-community/aesop"
