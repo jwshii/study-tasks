@@ -1,0 +1,10 @@
+name = "lean-tasks"
+version = "0.1.0"
+defaultTargets = ["lean-tasks"]
+
+[[lean_lib]]
+name = "LeanTasks"
+
+[[lean_exe]]
+name = "lean-tasks"
+root = "Main"
