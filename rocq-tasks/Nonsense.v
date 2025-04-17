@@ -21,7 +21,7 @@ Fixpoint morph_fluff (f : fluff) : fluff :=
   | puff b => puff (morph_blob b)
   end.
 
-Theorem morph_fluff_idem :
-  forall f, morph_fluff (morph_fluff f) = morph_fluff f.
+Theorem morph_fluff_idem : forall (f : fluff),
+  morph_fluff (morph_fluff f) = morph_fluff f.
 Proof.
 Admitted.

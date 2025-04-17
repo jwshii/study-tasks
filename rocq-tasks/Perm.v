@@ -14,11 +14,11 @@ Axiom Permutation_refl : forall (A : Type) (l : list A),
 Axiom Permutation_sym : forall (A : Type) (l l' : list A),
    Permutation l l' -> Permutation l' l.
 
-Axiom Permutation_trans : forall (A : Type) (l l' l'' : list A),
-   Permutation l l' -> Permutation l' l'' -> Permutation l l''.
+Axiom Permutation_rev : forall (A : Type) (l : list A),
+Permutation l (rev l).
 
-Axiom Permutation_in : forall (A : Type) (l l' : list A) (x : A),
- Permutation l l' -> In x l -> In x l'.
+Axiom Permutation_length : forall (A : Type) (l l' : list A),
+Permutation l l' -> length l = length l'.
 
 Axiom Permutation_app_tail : forall (A : Type) (l l' tl : list A),
  Permutation l l' -> Permutation (l ++ tl) (l' ++ tl).
@@ -46,12 +46,6 @@ Axiom Permutation_middle : forall (A : Type) (l1 l2 : list A) (a : A),
 Axiom Permutation_cons_app : forall (A : Type) (l l1 l2 : list A) (a : A),
   Permutation l (l1 ++ l2) -> Permutation (a :: l) (l1 ++ a :: l2).
 
-Axiom Permutation_elt : forall (A : Type) (l1 l2 l1' l2' : list A) (a : A),
-  Permutation (l1 ++ l2) (l1' ++ l2') ->
-  Permutation (l1 ++ a :: l2) (l1' ++ a :: l2').
-
-Axiom Permutation_rev : forall (A : Type) (l : list A),
-  Permutation l (rev l).
-
-Axiom Permutation_length : forall (A : Type) (l l' : list A),
- Permutation l l' -> length l = length l'.
+Axiom Permutation_cons_middle : forall (A : Type) (l1 l2 l3 l4 : list A) (a : A),
+  Permutation (l1 ++ l2) (l3 ++ l4) ->
+  Permutation (l1 ++ a :: l2) (l3 ++ a :: l4).
