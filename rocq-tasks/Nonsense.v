@@ -21,7 +21,17 @@ Fixpoint morph_fluff (f : fluff) : fluff :=
   | puff b => puff (morph_blob b)
   end.
 
+Lemma morph_blob_idem : forall (b : blob),
+  morph_blob (morph_blob b) = morph_blob b.
+Proof.
+  induction b; simpl; auto.
+Qed.
+
 Theorem morph_fluff_idem : forall (f : fluff),
   morph_fluff (morph_fluff f) = morph_fluff f.
 Proof.
-Admitted.
+  induction f; simpl.
+  - auto.
+  - rewrite IHf1. rewrite IHf2. auto.
+  - rewrite morph_blob_idem. auto.
+Qed.
